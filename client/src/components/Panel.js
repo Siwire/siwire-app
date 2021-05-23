@@ -1,11 +1,15 @@
 import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import StartWindow from './StartWindow';
+import FailWindow from './FailWindow';
+
 
 export default function Panel() {
 
     const windowCheck = () => {
-        return <StartWindow/>
+        // return <StartWindow/>
+        return <FailWindow/>
+
     }
 
     const panelStyles = useStyles();
