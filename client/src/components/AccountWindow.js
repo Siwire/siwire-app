@@ -1,14 +1,15 @@
 import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import UserInfo from './UserInfo';
+import RepositoriesInfo from './RepositoriesInfo'
 
 
 export default function AccountWindow() {
 
-    const mainStyles = useStyles()
-    return <Grid item xs={12}>
+    const accountStyles = useStyles()
+    return <Grid item xs={12} container direction="row">
         <UserInfo/>
-        {/* <RepositoriesInfo/> */}
+        <RepositoriesInfo/>
     </Grid>
 }
 

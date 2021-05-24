@@ -24,5 +24,7 @@ export default function Panel() {
 const useStyles = makeStyles((theme)=> ({
     root: {
         height: "89%",
+        backgroundColor: "#F9F9F9",
+
     }
 }))
