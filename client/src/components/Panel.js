@@ -4,27 +4,30 @@ import StartWindow from './StartWindow';
 import FailWindow from './FailWindow';
 import AccountWindow from './AccountWindow';
 
-
-export default function Panel({appStore}) {
-
+export default function Panel({ appStore }) {
     const windowCheck = () => {
-        // return <StartWindow/>
-        // return <FailWindow/>
-        return <AccountWindow appStore={appStore}/>
+        if (Object.keys(appStore.user).length === 0) {
+            return <StartWindow />
+        }
+        else if (appStore.user.login) {
+            return <AccountWindow appStore={appStore} />
 
+        }
+        else if (appStore.user.user === "notfound") {
+            return <FailWindow />
+        }
     }
 
     const panelStyles = useStyles();
 
     return <Grid className={panelStyles.root} item xs={12}>
-        {windowCheck() }
+        {windowCheck()}
     </Grid>
 }
 
-const useStyles = makeStyles((theme)=> ({
+const useStyles = makeStyles((theme) => ({
     root: {
         height: "89%",
         backgroundColor: "#F9F9F9",
-
     }
 }))
