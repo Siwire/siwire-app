@@ -18,7 +18,7 @@ export default function UserInfo({user}) {
                     component="button"
                     variant="body2"
                     onClick={() => {
-                        console.info("I'm a button.");
+                        window.open(`${user.html_url}`, '_blank').focus();
                     }}
                 >{user.login}</Link>
                 <Grid container direction="row" item xs={12}>
