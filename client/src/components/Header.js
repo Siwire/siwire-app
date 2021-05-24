@@ -1,7 +1,26 @@
 import { makeStyles, InputBase } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 
-export default function Header() {
+export default function Header({ appStore, appAction }) {
+
+    const { setUsername, fetchGetUser } = appAction
+
+
+    const setFieldValue = (event) => {
+        event.preventDefault();
+        console.log(event.target.value);
+        setUsername(event.target.value)
+    }
+    const handleKeyPress = (event) => {
+
+        if (appStore.username.trim().length && event.key === 'Enter' && !event.shiftKey) {
+            handleClick(event);
+        }
+    }
+    const handleClick = (event) => {
+        event.preventDefault();
+        fetchGetUser(event.target.value);
+    }
 
     const headerStyle = useStyles()
 
@@ -19,9 +38,12 @@ export default function Header() {
             </Grid>
             <Grid className={headerStyle.textField}>
                 <InputBase
+                    onChange={setFieldValue}
+                    onKeyDown={handleKeyPress}
                     className={headerStyle.input}
                     placeholder="Enter GitHub username"
-                    inputProps={{ 'aria-label': 'naked' }}
+                    // inputProps={{ 'aria-label': 'naked' }}
+                    value={appStore.username}
                 />
             </Grid>
         </Grid>

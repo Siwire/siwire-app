@@ -5,12 +5,12 @@ import FailWindow from './FailWindow';
 import AccountWindow from './AccountWindow';
 
 
-export default function Panel() {
+export default function Panel({appStore}) {
 
     const windowCheck = () => {
         // return <StartWindow/>
         // return <FailWindow/>
-        return <AccountWindow/>
+        return <AccountWindow appStore={appStore}/>
 
     }
 

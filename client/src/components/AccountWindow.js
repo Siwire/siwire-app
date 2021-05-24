@@ -4,11 +4,11 @@ import UserInfo from './UserInfo';
 import RepositoriesInfo from './RepositoriesInfo'
 
 
-export default function AccountWindow() {
+export default function AccountWindow({appStore}) {
 
     const accountStyles = useStyles()
     return <Grid item xs={12} container direction="row">
-        <UserInfo/>
+        <UserInfo user = {appStore.user}/>
         <RepositoriesInfo/>
     </Grid>
 }
