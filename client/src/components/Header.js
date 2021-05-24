@@ -8,7 +8,6 @@ export default function Header({ appStore, appAction }) {
 
     const setFieldValue = (event) => {
         event.preventDefault();
-        console.log(event.target.value);
         setUsername(event.target.value)
     }
     const handleKeyPress = (event) => {

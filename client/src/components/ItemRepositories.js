@@ -1,19 +1,22 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles, Typography, Link } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 
-export default function EmptyRepositories() {
-
+export default function EmptyRepositories({ repository }) {
     const itemRepositoriesInfo = useStyles()
     return <Grid className={itemRepositoriesInfo.root} item xs={12} container justify="flex-start" alignItems="center">
         <Grid item xs={12} container justify="flex-start" direction="column">
-            <Typography className={itemRepositoriesInfo.name_rep_text}>
-                react-hot-loader
-            </Typography>
+            <Link
+                className={itemRepositoriesInfo.name_rep_text}
+                component="button"
+                variant="body2"
+                onClick={() => {
+                    window.open(`${repository.html_url}`, '_blank').focus();
+                }}
+            >{repository.name}</Link>
             <Typography className={itemRepositoriesInfo.content_rep_text}>
-                Tweak React components in real time. (Deprecated: use Fast Refresh instead.
+                {repository.description}
             </Typography>
         </Grid>
-
     </Grid>
 }
 
@@ -22,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         height: "100%",
         padding: "24px 0px 24px 32px",
         marginTop: "24px",
-        backgroundColor: "#FFFFFF"
+        backgroundColor: "#FFFFFF",
     },
     name_rep_text: {
         fontFamily: "Inter",
@@ -43,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: "19px",
         letterSpacing: "0px",
         textAlign: "left",
-        color: "#000000"
-    }
-
+        color: "#000000",
+    },
 }))

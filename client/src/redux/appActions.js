@@ -13,7 +13,6 @@ export const fetchGetUser = (username) => {
     return async dispatch => {
         const userInfo = await axios.get(`${url}${username}`);
         const repInfo = await axios.get(`${url}${username}/repos`);
-        console.log(repInfo.data);
         dispatch({type: USER_INFO, payload: userInfo.data})
         dispatch({type: REP_INFO, payload: repInfo.data})
     }

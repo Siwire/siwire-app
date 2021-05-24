@@ -4,15 +4,15 @@ import UserInfo from './UserInfo';
 import RepositoriesInfo from './RepositoriesInfo'
 
 
-export default function AccountWindow({appStore}) {
+export default function AccountWindow({ appStore }) {
 
     const accountStyles = useStyles()
     return <Grid item xs={12} container direction="row">
-        <UserInfo user = {appStore.user}/>
-        <RepositoriesInfo/>
+        <UserInfo user={appStore.user} />
+        <RepositoriesInfo repositories={appStore.repositories}/>
     </Grid>
 }
 
 const useStyles = makeStyles((theme) => ({
-   
+
 }))

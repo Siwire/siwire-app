@@ -2,16 +2,18 @@ import { makeStyles, Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import ItemRepositories from './ItemRepositories';
 
-export default function ListRepositories() {
+export default function ListRepositories({repositories}) {
 
     const listRepositoriesInfo = useStyles()
 
     return <Grid className={listRepositoriesInfo.root} item xs={12} container justify="flex-start" alignItems="flex-start">
         <Grid item xs={11} container justify="flex-start">
             <Typography className={listRepositoriesInfo.text}>
-                Repositories (249)
+                Repositories ({repositories.length})
             </Typography>
-            <ItemRepositories />
+            {repositories && repositories.map(repository => {
+                return <ItemRepositories repository={repository}/>
+            })}
         </Grid>
         <Grid item xs={1}>
         </Grid>
