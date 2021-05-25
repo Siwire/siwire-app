@@ -54,8 +54,6 @@ export default function ListRepositories({ repositories, repositoriesPerPage, cu
                     marginPagesDisplayed={1}
                     pageRangeDisplayed={2}
                     onPageChange={handlePageClick}
-                    containerClassName={'pagination'}
-                    initialPage={currentPage}
                     forcePage={currentPage}
                     previousClassName={listRepositoriesInfo.previous}
                     nextClassName={listRepositoriesInfo.next}
