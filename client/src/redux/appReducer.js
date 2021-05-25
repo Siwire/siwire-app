@@ -1,4 +1,4 @@
-import { USERNAME_VALUE, USER_INFO, REP_PERPAGE_INFO, CURRENT_PAGE, COUNT_PAGE, REP_ALL_INFO } from "./appTypes"
+import { USERNAME_VALUE, USER_INFO, REP_PERPAGE_INFO, CURRENT_PAGE, COUNT_PAGE, REP_ALL_INFO, LOADING } from "./appTypes"
 
 const initialState = {
     username: '',
@@ -7,6 +7,7 @@ const initialState = {
     repositoriesPerPage: [],
     currentPage: 0,
     countPage: "",
+    isLoading: false,
 }
 
 const reducer = (state = initialState, action) => {
@@ -40,6 +41,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 countPage: action.payload,
+            }
+        case LOADING: 
+            return {
+                ...state, 
+                isLoading: action.payload,
             }
         default:
             return {

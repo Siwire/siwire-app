@@ -1,6 +1,7 @@
+import { CardActions } from '@material-ui/core';
 import axios from 'axios';
 
-import { USERNAME_VALUE, USER_INFO, REP_PERPAGE_INFO, CURRENT_PAGE, COUNT_PAGE, REP_ALL_INFO } from "./appTypes"
+import { USERNAME_VALUE, USER_INFO, REP_PERPAGE_INFO, CURRENT_PAGE, COUNT_PAGE, REP_ALL_INFO, LOADING } from "./appTypes"
 
 const url = 'https://api.github.com/users/';
 
@@ -11,10 +12,14 @@ export const setUsername = (username) => {
 }
 export const fetchGetUser = (username) => {
     return async dispatch => {
+        dispatch({ type: LOADING, payload: true })
         try {
+
             const userInfo = await axios.get(`${url}${username}`);
             const allRep = await axios.get(`${url}${username}/repos`,);
             const repForFirstPage = await axios.get(`${url}${username}/repos?page=1&per_page=4`,);
+            dispatch({ type: LOADING, payload: false })
+            
             dispatch({ type: REP_ALL_INFO, payload: allRep.data })
             dispatch({ type: USER_INFO, payload: userInfo.data })
             dispatch({ type: REP_PERPAGE_INFO, payload: repForFirstPage.data })
