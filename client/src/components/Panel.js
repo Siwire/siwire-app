@@ -33,7 +33,7 @@ export default function Panel({ appStore, appAction }) {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: "89%",
+        height: "80%",
         backgroundColor: "#F9F9F9",
     }
 }))

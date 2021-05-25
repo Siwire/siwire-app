@@ -15,5 +15,6 @@ export default function Main({appActions, appStore}) {
 const useStyles = makeStyles((theme) => ({
     root: {
         height: "100%",
+        backgroundColor: "#F9F9F9",
     }
 }))

@@ -50,7 +50,7 @@ export default function Header({ appStore, appAction }) {
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: "#0064EB",
-        height: "72px",
+        height: "10%",
     },
     logo: {
         paddingLeft: "41px"
