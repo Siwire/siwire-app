@@ -34,12 +34,12 @@ export default function ListRepositories({ repositories, repositoriesPerPage, cu
             })}
         </Grid>
         <Grid item xs={11} sm={11} container direction="row" justify="flex-end">
-            <Grid container alignItems="center" justify="flex-end" item sm={4} xs={12}>
+            <Grid container alignItems="center" justify="flex-end" item  xs={12} sm={5}  lg={7} >
                 <Typography className={listRepositoriesInfo.count_item_text}>
                     {`${checkViewItemRep()} of ${repositories.length} items`}
                 </Typography>
             </Grid>
-            <Grid item xs={12} sm={4} container justify="flex-end" >
+            <Grid item xs={12} sm={7}  lg={5} container justify="center" >
                 <ReactPaginate
                     previousLabel={<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" clipRule="evenodd" d="M3.41436 6.00008L7.70726 1.70718L6.29304 0.292969L0.585938 6.00008L6.29304 11.7072L7.70726 10.293L3.41436 6.00008Z" fill={currentPage === 0 ? "grey" : "#0064EB"} />
@@ -52,7 +52,7 @@ export default function ListRepositories({ repositories, repositoriesPerPage, cu
                     activeClassName={listRepositoriesInfo.active_page}
                     activeLinkClassName={listRepositoriesInfo.active}
                     pageCount={countPage}
-                    marginPagesDisplayed={0}
+                    marginPagesDisplayed={1}
                     pageRangeDisplayed={2}
                     onPageChange={handlePageClick}
                     containerClassName={'pagination'}
