@@ -1,8 +1,6 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import UserInfo from './UserInfo';
-import RepositoriesInfo from './RepositoriesInfo'
-import styled, { keyframes, css, } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export default function LoadingWindow() {
 
@@ -22,8 +20,8 @@ export default function LoadingWindow() {
         width: 120px;
         height: 120px;
 
-        animation: ${rotate360} 1s linear infinite;
-        transform: translateZ(0);
+        animation: ${rotate360} 2s linear infinite;
+        
         `;
         return <Spinner />
     }
