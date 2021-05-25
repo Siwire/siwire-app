@@ -29,8 +29,8 @@ export default function ListRepositories({ repositories, repositoriesPerPage, cu
             <Typography className={listRepositoriesInfo.text}>
                 Repositories ({repositories.length})
             </Typography>
-            {repositoriesPerPage && repositoriesPerPage.map(repository => {
-                return <ItemRepositories repository={repository} />
+            {repositoriesPerPage && repositoriesPerPage.map((repository, index) => {
+                return <ItemRepositories key={index} repository={repository} />
             })}
         </Grid>
         <Grid item xs={11} sm={11} container direction="row" justify="flex-end">
@@ -42,7 +42,7 @@ export default function ListRepositories({ repositories, repositoriesPerPage, cu
             <Grid item xs={12} sm={4} container justify="flex-end" >
                 <ReactPaginate
                     previousLabel={<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.41436 6.00008L7.70726 1.70718L6.29304 0.292969L0.585938 6.00008L6.29304 11.7072L7.70726 10.293L3.41436 6.00008Z" fill={currentPage === 0 ? "grey" : "#0064EB"} />
+                        <path fillRule="evenodd" clipRule="evenodd" d="M3.41436 6.00008L7.70726 1.70718L6.29304 0.292969L0.585938 6.00008L6.29304 11.7072L7.70726 10.293L3.41436 6.00008Z" fill={currentPage === 0 ? "grey" : "#0064EB"} />
                     </svg>}
                     nextLabel={<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" >
                         <path fillRule="evenodd" clipRule="evenodd" d="M1 1L6 6L1 11" fill={currentPage === countPage ? "#0064EB" : "grey"} />

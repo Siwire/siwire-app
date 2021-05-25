@@ -15,7 +15,6 @@ export const fetchGetUser = (username) => {
             const userInfo = await axios.get(`${url}${username}`);
             const allRep = await axios.get(`${url}${username}/repos`,);
             const repForFirstPage = await axios.get(`${url}${username}/repos?page=1&per_page=4`,);
-            console.log(allRep);
             dispatch({ type: REP_ALL_INFO, payload: allRep.data })
             dispatch({ type: USER_INFO, payload: userInfo.data })
             dispatch({ type: REP_PERPAGE_INFO, payload: repForFirstPage.data })
