@@ -1,9 +1,12 @@
-import { USERNAME_VALUE, USER_INFO, REP_INFO } from "./appTypes"
+import { USERNAME_VALUE, USER_INFO, REP_PERPAGE_INFO, CURRENT_PAGE, COUNT_PAGE, REP_ALL_INFO } from "./appTypes"
 
 const initialState = {
     username: '',
     user: {},
     repositories: [],
+    repositoriesPerPage: [],
+    currentPage: "",
+    countPage: "",
 }
 
 const reducer = (state = initialState, action) => {
@@ -18,10 +21,25 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 username: action.payload,
             }
-        case REP_INFO:
+        case REP_ALL_INFO:
+            return {
+                ...state, 
+                repositories: action.payload,
+            }
+        case REP_PERPAGE_INFO:
             return {
                 ...state,
-                repositories: action.payload, 
+                repositoriesPerPage: action.payload,
+            }
+        case CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: action.payload,
+            }
+        case COUNT_PAGE:
+            return {
+                ...state,
+                countPage: action.payload,
             }
         default:
             return {

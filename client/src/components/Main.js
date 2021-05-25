@@ -8,7 +8,7 @@ export default function Main({appActions, appStore}) {
     const mainStyles = useStyles()
     return <Grid className={mainStyles.root}>
         <Header appAction={appActions} appStore={appStore}/>
-        <Panel appStore={appStore}/>
+        <Panel appStore={appStore} appAction={appActions}/>
     </Grid>
 }
 
