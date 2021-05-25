@@ -5,10 +5,10 @@ import Grid from '@material-ui/core/Grid';
 export default function UserInfo({user}) {
 
     const userInfoStyles = useStyles()
-    return <Grid item xs={4} container direction="row" justify="center" className={userInfoStyles.root}>
-        <Grid item xs={2}>
+    return <Grid item xs={12} md={4} container direction="row" justify="center" className={userInfoStyles.root}>
+        <Grid item xs={1} md={1}>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={11} md={10}>
             <Grid>
                 <Avatar alt="Remy Sharp" src={user.avatar_url} className={userInfoStyles.avatar} />
             </Grid>
