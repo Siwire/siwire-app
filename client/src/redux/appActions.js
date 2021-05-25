@@ -26,6 +26,7 @@ export const fetchGetUser = (username) => {
             dispatch({ type: CURRENT_PAGE, payload: 0 })
         }
         catch (error) {
+            dispatch({ type: LOADING, payload: false })
             dispatch({ type: USER_INFO, payload: { user: "notfound" } })
         }
     }
