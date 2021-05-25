@@ -1,6 +1,5 @@
 import { makeStyles, Typography, Avatar, Link } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-// import pic from '../assets/1.jpg'
 
 export default function UserInfo({ user }) {
 
@@ -44,8 +43,6 @@ export default function UserInfo({ user }) {
                 </Grid>
             </Grid>
         </Grid>
-
-
     </Grid>
 }
 

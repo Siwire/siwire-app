@@ -23,23 +23,18 @@ export default function ListRepositories({ repositories, repositoriesPerPage, cu
 
     const listRepositoriesInfo = useStyles()
 
-    return <Grid className={listRepositoriesInfo.root} item xs={12} container justify="center" alignItems="flex-start">
+    return <Grid className={listRepositoriesInfo.root} item xs={12} container justify="flex-start" alignItems="flex-start">
         <Grid container justify="flex-start" item sm={12}>
             <Typography className={listRepositoriesInfo.text}>
                 Repositories ({repositories.length})
             </Typography>
         </Grid>
-        <Grid className={listRepositoriesInfo.box} item sm={12} md={11} container justify="flex-start">
+        <Grid className={listRepositoriesInfo.box} item sm={12} md={12} lg={11} container justify="flex-start">
             {repositoriesPerPage && repositoriesPerPage.map((repository, index) => {
                 return <ItemRepositories key={index} repository={repository} />
             })}
         </Grid>
         <Grid item xs={11} sm={11} container direction="row" justify="flex-end">
-            {/* <Grid container alignItems="center" justify="flex-end" item xs={12} sm={5} lg={6} >
-                <Typography className={listRepositoriesInfo.count_item_text}>
-                    {`${checkViewItemRep()} of ${repositories.length} items`}
-                </Typography>
-            </Grid> */}
             <Grid item xs={12}  container justify="flex-end" alignItems="center">
                 <Typography className={listRepositoriesInfo.count_item_text}>
                     {`${checkViewItemRep()} of ${repositories.length} items`}
@@ -54,7 +49,6 @@ export default function ListRepositories({ repositories, repositoriesPerPage, cu
                     }
                     breakLabel={'...'}
                     breakClassName={listRepositoriesInfo.break}
-                    // activeClassName={listRepositoriesInfo.active_page}
                     activeLinkClassName={listRepositoriesInfo.active}
                     pageCount={countPage}
                     marginPagesDisplayed={1}
@@ -117,11 +111,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#0064EB",
         alignItems: "center",
         color: "#FFFFFF",
-        // color: "red",
-        // height: "25px",
-        // width: "21px",
-        // left: "190px",
-        // top: "0px",
         borderRadius: "3px",
         padding: "2px 6px 2px 6px",
     },
@@ -129,11 +118,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#0064EB",
         alignItems: "center",
         color: "#FFFFFF",
-        // color: "red",
-        // height: "25px",
-        // width: "21px",
-        // left: "190px",
-        // top: "0px",
         borderRadius: "3px",
         padding: "2px 6px 2px 6px",
 
@@ -146,7 +130,6 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: "42px",
         letterSpacing: "0px",
         textAlign: "left",
-
     },
     count_item_text: {
         fontFamily: "Inter",

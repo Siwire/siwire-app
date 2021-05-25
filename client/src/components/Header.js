@@ -5,7 +5,6 @@ export default function Header({ appStore, appAction }) {
 
     const { setUsername, fetchGetUser } = appAction
 
-
     const setFieldValue = (event) => {
         event.preventDefault();
         setUsername(event.target.value)
@@ -41,7 +40,6 @@ export default function Header({ appStore, appAction }) {
                     onKeyDown={handleKeyPress}
                     className={headerStyle.input}
                     placeholder="Enter GitHub username"
-                    // inputProps={{ 'aria-label': 'naked' }}
                     value={appStore.username}
                 />
             </Grid>
@@ -63,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "6px",
         backgroundColor: "#fff",
         height: "40px",
-        // width: "256px",
     },
     textField: {
         paddingLeft: "11px",
@@ -80,6 +77,5 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "left",
         alignItems: "center",
         color: "#000000",
-
     }
 }))

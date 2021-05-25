@@ -13,7 +13,6 @@ export const fetchGetUser = (username) => {
     return async dispatch => {
         dispatch({ type: LOADING, payload: true })
         try {
-
             const userInfo = await axios.get(`${url}${username}`);
             const allRep = await axios.get(`${url}${username}/repos`,);
             const repForFirstPage = await axios.get(`${url}${username}/repos?page=1&per_page=4`,);
