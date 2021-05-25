@@ -29,7 +29,7 @@ export default function ListRepositories({ repositories, repositoriesPerPage, cu
                 Repositories ({repositories.length})
             </Typography>
         </Grid>
-        <Grid className={listRepositoriesInfo.box} item sm={12} md={12} lg={11} container justify="flex-start">
+        <Grid className={listRepositoriesInfo.box} item sm={12} md={12} lg={11} container direction="column" alignItems="flex-start" justify="flex-start">
             {repositoriesPerPage && repositoriesPerPage.map((repository, index) => {
                 return <ItemRepositories key={index} repository={repository} />
             })}
