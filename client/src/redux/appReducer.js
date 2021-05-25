@@ -5,7 +5,7 @@ const initialState = {
     user: {},
     repositories: [],
     repositoriesPerPage: [],
-    currentPage: "",
+    currentPage: 0,
     countPage: "",
 }
 

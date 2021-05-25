@@ -20,6 +20,7 @@ export const fetchGetUser = (username) => {
             dispatch({ type: REP_PERPAGE_INFO, payload: repForFirstPage.data })
             const countPage = allRep.data.length / 4
             dispatch({ type: COUNT_PAGE, payload: countPage })
+            dispatch({ type: CURRENT_PAGE, payload: 0 })
         }
         catch (error) {
             dispatch({ type: USER_INFO, payload: { user: "notfound" } })
